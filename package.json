@@ -1,0 +1,8 @@
+{
+    "name" : "qasht",
+    "version" : "0.0.0",
+    "dependencies" : {
+        "istanbul" : "x.x.x",
+        "jsdom" : "x.x.x"
+    }
+}
