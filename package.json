@@ -1,8 +1,14 @@
 {
     "name" : "qasht",
-    "version" : "0.0.0",
+    "version": "0.1.0",
     "dependencies" : {
         "istanbul" : "x.x.x",
-        "jsdom" : "x.x.x"
+        "jsdom": "x.x.x",
+        "dojo": "1.10"
+    },
+    "devDependencies": {
+        "istanbul": "x.x.x",
+        "jsdom": "x.x.x",
+        "dojo": "1.10"
     }
 }
