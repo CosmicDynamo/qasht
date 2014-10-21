@@ -3,14 +3,14 @@
  */
 define([
     "dojo/_base/declare",
-    "../Unit",
-    "qash/rdf/parser/turtle",
+    "qasht/package/Unit",
+    "jazzHands/parser/turtle",
     "dojo/when",
     "dojo/_base/Deferred",
-    "qash/Cache",
+    "blocks/Cache",
     "dojo/promise/all",
-    "qash/rdf/Environment",
-    "qash/rdf/toJsonld"
+    "RdfJs/Environment",
+    "RdfJs/toJsonld"
 ], function (declare, UnitTestPackage, Turtle, when, Deferred, Cache, all, rdfEnv, toJsonld) {
     return declare([UnitTestPackage, rdfEnv], {
         type: "w3c Unit",
