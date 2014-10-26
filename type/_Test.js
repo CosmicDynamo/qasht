@@ -79,6 +79,13 @@
             var isObj = instance != null && lang.isObject(instance);
             this.assertTrue(isObj, "Assert Is Object: " + hint);
         },
+        assertIsFunction: function (instance, hint) {
+            var isObj = instance != null && lang.isFunction(instance);
+            this.assertTrue(isObj, "Assert Is Function: " + hint);
+        },
+        assertNull: function (value, hint) {
+            this.assertTrue(value === null, "Assert Is Null: " + hint);
+        },
         whenResolved: function (promise, fn) {
             var test = this;
             return when(promise, fn, function (error) {
