@@ -75,9 +75,25 @@
             }
             this.runner.renderSuccess(this, "Assert False", hint);
         },
+        assertUndefined: function (actual, hint) {
+            var isUnDef = actual == null;
+            this.assertTrue(isUnDef, "Assert Is Undefined: " + hint);
+        },
+        assertIsNumber: function (value, hint) {
+            var isNum = !isNaN(value) && isFinite(value);
+            this.assertTrue(isNum, "Assert Is A Number: " + hint);
+        },
         assertIsObject: function (instance, hint) {
             var isObj = instance != null && lang.isObject(instance);
             this.assertTrue(isObj, "Assert Is Object: " + hint);
+        },
+        assertIsArray: function (instance, hint) {
+            var isArray = instance != null && lang.isArray(instance);
+            this.assertTrue(isArray, "Assert Is Array: " + hint);
+        },
+        assertIsString: function (instance, hint) {
+            var isString = instance != null && lang.isString(instance);
+            this.assertTrue(isString, "Assert Is String: " + hint);
         },
         assertIsFunction: function (instance, hint) {
             var isObj = instance != null && lang.isFunction(instance);
@@ -91,6 +107,12 @@
             return when(promise, fn, function (error) {
                 test.assertFail(error);
             })
+        },
+        whenRejected: function (promise, fn) {
+            var test = this;
+            return when(promise, function (error) {
+                test.assertFail(error);
+            }, fn)
         }
     });
 });
