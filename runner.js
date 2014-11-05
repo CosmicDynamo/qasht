@@ -1,6 +1,10 @@
 define([
-    "dojo/_base/Deferred", "dojo/_base/lang", "dojo/when", "dojo/promise/all", "polyfill/Date/now", "polyfill/Function"
-], function (Deferred, lang, when, all, now) {
+    "dojo/_base/Deferred",
+    "dojo/_base/lang",
+    "dojo/when",
+    "polyfill/has!Function.defer",
+    "polyfill/has!Function.next"
+], function (Deferred, lang, when) {
     return {
         buildRendering: null,
         last: null,
@@ -31,7 +35,7 @@ define([
             var args = arguments;
 
             test.runner = this;
-            test.started = now();
+            test.started = Date.now;
             this.renderTestStart(test);
             this.testStart(test);
             function onError(ex) {

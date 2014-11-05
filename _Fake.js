@@ -21,15 +21,17 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
- * @module qasht/_Fake
+ * @module qasht._Fake
  */
 define([
     "dojo/_base/declare"
 ], function (declare) {
     /**
-     * @class qasht/_Fake
+     * @class qasht._Fake
      */
     return declare([], {
+        /** @property {qasht.Test} */
+        test: null,
         constructor: function () {
             var last = arguments[arguments.length - 1];
             if (last) {
